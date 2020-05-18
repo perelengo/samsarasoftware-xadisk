@@ -63,7 +63,7 @@ public class XADiskJTABootstrap {
 
 	public void start(Map<String,String> options) {
 		String instanceId=options.get("instanceId");
-		String xaDirectory=options.get("xaDirectory");
+		String xaDirectory=options.get("directory");
 		String deadLockDetectorInterval=options.get("deadLockDetectorInterval");
 		String lockTimeOut=options.get("lockTimeOut");
 		String transactionLogFileMaxSize=options.get("transactionLogFileMaxSizeDirectory");
@@ -109,7 +109,7 @@ public class XADiskJTABootstrap {
 		StandaloneFileSystemConfiguration configuration = new StandaloneFileSystemConfiguration(XADiskSystemDirectory, instanceId);
 		
 		try{
-			if(deadLockDetectorInterval==null)
+			if(deadLockDetectorInterval!=null)
 				configuration.setDeadLockDetectorInterval(Integer.parseInt(deadLockDetectorInterval));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -118,7 +118,7 @@ public class XADiskJTABootstrap {
 		}
 		
 		try{
-			if(lockTimeOut==null)
+			if(lockTimeOut!=null)
 				configuration.setLockTimeOut(Integer.parseInt(lockTimeOut));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -128,7 +128,7 @@ public class XADiskJTABootstrap {
 		
 		
 		try{
-			if(transactionLogFileMaxSize==null)
+			if(transactionLogFileMaxSize!=null)
 				configuration.setTransactionLogFileMaxSize(Long.parseLong(transactionLogFileMaxSize));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -137,7 +137,7 @@ public class XADiskJTABootstrap {
 		}
 		
 		try{
-			if(transactionTimeout==null)
+			if(transactionTimeout!=null)
 				configuration.setTransactionTimeout(Integer.parseInt(transactionTimeout));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -146,7 +146,7 @@ public class XADiskJTABootstrap {
 		}
 		
 		try{
-			if(bufferPoolRelieverInterval==null)
+			if(bufferPoolRelieverInterval!=null)
 				configuration.setBufferPoolRelieverInterval(Integer.parseInt(bufferPoolRelieverInterval));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -155,7 +155,7 @@ public class XADiskJTABootstrap {
 		}		
 		
 		try{
-			if(bufferSize==null)
+			if(bufferSize!=null)
 				configuration.setBufferSize(Integer.parseInt(bufferSize));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -164,7 +164,7 @@ public class XADiskJTABootstrap {
 		}
 
 		try{
-			if(clusterMasterAddress==null)
+			if(clusterMasterAddress!=null)
 				configuration.setClusterMasterAddress(clusterMasterAddress);
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -173,7 +173,7 @@ public class XADiskJTABootstrap {
 		}
 
 		try{
-			if(clusterMasterPort==null)
+			if(clusterMasterPort!=null)
 				configuration.setClusterMasterPort(Integer.parseInt(clusterMasterPort));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -182,7 +182,7 @@ public class XADiskJTABootstrap {
 		}
 
 		try{
-			if(cumulativeBufferSizeForDiskWrite==null)
+			if(cumulativeBufferSizeForDiskWrite!=null)
 				configuration.setCumulativeBufferSizeForDiskWrite(Integer.parseInt(cumulativeBufferSizeForDiskWrite));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -191,7 +191,7 @@ public class XADiskJTABootstrap {
 		}
 
 		try{
-			if(directBufferIdleTime==null)
+			if(directBufferIdleTime!=null)
 				configuration.setDirectBufferIdleTime(Integer.parseInt(directBufferIdleTime));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -200,7 +200,7 @@ public class XADiskJTABootstrap {
 		}
 
 		try{
-			if(directBufferPoolSize==null)
+			if(directBufferPoolSize!=null)
 				configuration.setDirectBufferPoolSize(Integer.parseInt(directBufferPoolSize));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -209,7 +209,7 @@ public class XADiskJTABootstrap {
 		}
 
 		try{
-			if(enableClusterMode==null)
+			if(enableClusterMode!=null)
 				configuration.setEnableClusterMode(Boolean.parseBoolean(enableClusterMode));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -218,7 +218,7 @@ public class XADiskJTABootstrap {
 		}
 		
 		try{
-			if(enableRemoteInvocations==null)
+			if(enableRemoteInvocations!=null)
 				configuration.setEnableRemoteInvocations(Boolean.parseBoolean(enableRemoteInvocations));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -227,7 +227,7 @@ public class XADiskJTABootstrap {
 		}
 		
 		try{
-			if(lockTimeOut==null)
+			if(lockTimeOut!=null)
 				configuration.setLockTimeOut(Integer.parseInt(lockTimeOut));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -236,7 +236,7 @@ public class XADiskJTABootstrap {
 		}
 
 		try{
-			if(maximumConcurrentEventDeliveries==null)
+			if(maximumConcurrentEventDeliveries!=null)
 				configuration.setMaximumConcurrentEventDeliveries(Integer.parseInt(maximumConcurrentEventDeliveries));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -245,7 +245,7 @@ public class XADiskJTABootstrap {
 		}
 
 		try{
-			if(maxNonPooledBufferSize==null)
+			if(maxNonPooledBufferSize!=null)
 				configuration.setMaxNonPooledBufferSize(Long.parseLong(maxNonPooledBufferSize));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -254,7 +254,7 @@ public class XADiskJTABootstrap {
 		}
 
 		try{
-			if(nonDirectBufferIdleTime==null)
+			if(nonDirectBufferIdleTime!=null)
 				configuration.setNonDirectBufferIdleTime(Integer.parseInt(nonDirectBufferIdleTime));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -263,7 +263,7 @@ public class XADiskJTABootstrap {
 		}
 
 		try{
-			if(nonDirectBufferPoolSize==null)
+			if(nonDirectBufferPoolSize!=null)
 				configuration.setNonDirectBufferPoolSize(Integer.parseInt(nonDirectBufferPoolSize));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -272,7 +272,7 @@ public class XADiskJTABootstrap {
 		}
 		
 		try{
-			if(serverAddress==null)
+			if(serverAddress!=null)
 				configuration.setServerAddress(serverAddress);
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -281,7 +281,7 @@ public class XADiskJTABootstrap {
 		}
 
 		try{
-			if(serverPort==null)
+			if(serverPort!=null)
 				configuration.setServerPort(Integer.parseInt(serverPort));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -290,7 +290,7 @@ public class XADiskJTABootstrap {
 		}
 		
 		try{
-			if(synchronizeDirectoryChanges==null)
+			if(synchronizeDirectoryChanges!=null)
 				configuration.setSynchronizeDirectoryChanges(Boolean.parseBoolean(synchronizeDirectoryChanges));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -299,7 +299,7 @@ public class XADiskJTABootstrap {
 		}
 
 		try{
-			if(workManagerCorePoolSize==null)
+			if(workManagerCorePoolSize!=null)
 				configuration.setWorkManagerCorePoolSize(Integer.parseInt(workManagerCorePoolSize));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -308,7 +308,7 @@ public class XADiskJTABootstrap {
 		}
 		
 		try{
-			if(workManagerKeepAliveTime==null)
+			if(workManagerKeepAliveTime!=null)
 				configuration.setWorkManagerKeepAliveTime(Long.parseLong(workManagerKeepAliveTime));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -317,7 +317,7 @@ public class XADiskJTABootstrap {
 		}
 
 		try{
-			if(workManagerMaxPoolSize==null)
+			if(workManagerMaxPoolSize!=null)
 				configuration.setWorkManagerMaxPoolSize(Integer.parseInt(workManagerMaxPoolSize));
 		}catch(Throwable t){
 			log.error(t.getMessage(),t);
@@ -336,7 +336,7 @@ public class XADiskJTABootstrap {
 		}
 		
 		try{
-			if(Boolean.parseBoolean(rollbackRecoveredTransactions)){
+			if(rollbackRecoveredTransactions!=null && Boolean.parseBoolean(rollbackRecoveredTransactions)){
 				rollbackRecoveredTransactions(instanceId,xafs);
 			}
 		}catch(Throwable t){
